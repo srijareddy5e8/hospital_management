@@ -1,0 +1,311 @@
+<html>
+<head><title>Registrationdemo</title>
+<style>
+.container
+{
+width:100%;
+height:100%;
+justify-content:center;
+background-position:center;
+background-size:cover;
+position:relative;
+background-color:#FFE8D4
+}
+body{
+height:100%;
+justify-content:center;
+align-items:center;
+padding:10px;
+}
+h1{
+color:#80BD9E;
+size:30px;
+}
+.regis-box
+{
+
+    width: 90%;
+    position: absolute;
+    max-width: 80%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    justify-content: center;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color: #fff;
+}
+input-field{
+background-color:#eaeaea;
+margin:15px 0;
+border-radius:3px;
+display:flex;
+align-items:center;
+}
+formdiv{
+width:50%;
+background:#D3D3D3;
+border:0;
+outline:0;
+padding:10px 10px;
+align-items:center;
+border-radius:7%;
+height:100%;
+}
+regis{
+background-color:#eaeaea;
+margin:15px 0;
+border-radius:3px;
+display:flex;
+align-items:center;
+}
+.radioval{
+width:10%;
+}
+.namesfield
+{
+height:100%;
+width:40%;
+position:fixed;
+top:20%;
+padding-top:20px;
+left:0;
+overflow-x:hidden;
+float:left;
+display:block;
+}
+.studentfield
+{
+height:100%;
+width:40%;
+position:fixed;
+top:20%;
+padding-top:20px;
+right:0;
+overflow-x:hidden;
+float:left;
+}
+.buttondiv
+{
+height:100%;
+width:50%;
+position:fixed;
+top:85%;
+justify-content:center;
+align-items:center;
+justify-content:center;
+padding-left:260;
+}
+.buttonfield
+{
+background:#80BD9E;
+height:40px;
+border:0;
+outline:0;
+cursor:pointer;
+border-radius:20px;
+/* transition:background 1s; */
+border-radius:25px;
+width:20%;
+}
+.buttonfield:hover
+{
+background-color:#FFE8D4;
+color:#80BD9E;
+}
+.backbutton
+{
+height:40px;
+width:10%;
+position:fixed;
+background:transparent;
+border:0;
+outline:0;
+cursor:pointer;
+border-radius:20px;
+
+}
+.backbutton:hover
+{
+background-color:#FFE8D4;
+color:#80BD9E;
+
+}
+
+input[type=text], input[type=password]
+{
+border-radius:25px;
+border-color:#80BD9E;
+padding:17px;
+height:3px;
+margin-bottom:7px;
+}
+input[type=text]:hover, input[type=password]:hover
+{
+background-color:#FFE8D4;
+color:#80BD9E;
+border-color:#FFE8D4;
+}
+h3
+{
+size:20px;
+color:#80BD9E;
+}
+p
+{
+ color:#80BD9E;
+ size:18px;
+}
+</style>
+<script  crossorigin="anonymous">
+function validateform()
+{
+   var n=document.f1.name.value;
+   if(n=="")
+    {
+      alert("Name cannot be empty!");
+      return false;
+    }
+   var pass=document.f1.password1.value;
+   if(pass.length<6)
+   {
+      alert("Password must be atleast of 6 characters");
+      return false;
+   } 
+   var repass=document.f1.password2.value;
+   if(pass!=repass)
+   {
+     alert("Password entered not matched");
+     return false;
+   }
+   var stid=document.f1.studentid.value;
+   if(stid=="")
+   {
+     alert("Student ID cannot be empty");
+     return false;
+   }
+   var stg=document.f1.studentmail.value;
+  if(stg=="")
+   {
+     alert("Student mail cannot be empty"); 
+     return false;
+   }
+   var age=document.f1.ages.value;
+   if(age<16)
+    {
+     alert("Not Eligible for library membership");
+     return false;
+   }
+  var num=document.f1.phonenum.value;
+  if(isNaN(num))
+    {
+     alert("Enter numeric value only");
+    return false;
+    }
+  if(num.length!=10)
+    {
+      alert("Number must be in 10 digits only");
+      return false;
+    }
+else
+{
+alert("Sucessfully Resgistered!");
+}
+}
+</script>
+</head>
+<body>
+<div class="container">
+<i class="fa-solid fa-arrow-left" style="padding-top:13px; padding-left:3rem; display:felx;"></i>
+<button class="backbutton" type="button" onclick="window.location.href='index.html';">Back</button>
+   <div class="regis-box">
+
+     <form autocomplete="off" style="height:100">
+        <h1 style="height:20%;">Sign-Up</h1>
+        <div class="formdiv" style="height:100%;">
+            <div class="namesfield">
+                <h3>Personal deatils</h3>
+                <input type="text" name="fname" placeholder="First name" autocomplete="off">
+                <input type="text" name="lname" placeholder="Last name">
+                <input type="password" name="password1" placeholder="Password">
+                <input type="password" name="password2" placeholder="Re-Enter Password">
+                <p>Date Of Birth:<input type="date" name="dob">
+                <p>Gender:<input type="radio" name="gender" value="Male">M<input type="radio" name="gender" value="female">F
+             </div>
+             <div class="studentfield">
+                <h3>Identification Details</h3>
+                <input type="text" name="studentid" placeholder="Student-ID">
+                <input type="text" name="studentmail" placeholder="Student Email">
+                <input type="text" name="phonenum" placeholder="Phone Number">
+                <input type="text" name="ages" placeholder="Age">
+             </div>
+             <div class="buttondiv">
+                 <button type="button" class="buttonfield"  onclick="validateform()" id="signup">Sign-Up</button>
+                  <button type="reset" class="buttonfield">Clear</button>
+             </div>
+        </div>
+      </form>
+
+   </div>
+</div>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getDatabase,set,ref} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAd4wt_S6u1wacEi_NYnNmbgNcKXQanaII",
+    authDomain: "registration-a4fb1.firebaseapp.com",
+    databaseURL: "https://registration-a4fb1-default-rtdb.firebaseio.com",
+    projectId: "registration-a4fb1",
+    storageBucket: "registration-a4fb1.appspot.com",
+    messagingSenderId: "615973482897",
+    appId: "1:615973482897:web:0dfaa7a2b4ca3a0f1bea30"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database= getDatabase(app);
+  const auth = getAuth();
+
+  signup.addEventListener('click',(e)=>{
+
+    var firstn=document.f1.fname.value;
+    var lastn=document.f1.lname.value;
+    var pass1=document.f1.password1.value;
+    var pass2=document.f1.password2.value;
+    var dateOfbirth=document.f1.dob.value;
+    var gen=document.f1.gender.value;
+    var stdid=document.f1.studentid.value;
+    var stdmail=document.f1.studentmail.value;
+    var pn=document.f1.phonenum.value;
+    var a=document.f1.ages.value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    set(ref(database,'user/'+ user.uid),
+    {
+      username:stdid,
+      email:stdmail
+    })
+    alert('User Created!');
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    alert('errorMessage');
+    // ..
+  });
+
+  })
+</script>
+</body>
+</html>

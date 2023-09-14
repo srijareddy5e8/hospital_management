@@ -1,0 +1,256 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {margin:0;
+  font-family:League Spartan;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #80BD9E;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color:white;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar a:hover {
+ opacity:0.7
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px;
+}
+img{
+    height:70px;
+    width:200px;
+}
+.imagediv
+{
+    width:50%;
+    top: 130px;
+    height:510px;
+    padding:0em;
+    background-repeat:no-repeat;
+    background-image: url('WelcomeLibrary.jpg');
+    position:relative;
+    background-size: 90% 500px;
+    object-fit: cover;
+}
+.detailsdiv
+{
+    height:500px;
+    width:100%;
+    margin-left:0.2em;
+}
+.eventdetails
+{
+    margin-top: -25em;
+    margin-left:50em;
+}
+.maxpara
+{
+    font-size:20px;
+    font-family:League Spartan;
+    margin-left:2em;
+}
+.mini
+{
+    display:flex;
+    width:100%;
+    font-size:16px;
+    margin-left:2em;
+}
+.gather
+{
+    margin-left:6em;
+    width:600px;
+    height:450px;
+
+}
+.buttonevent
+{
+  background-color: #80BD9E;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  color:white;
+  margin-left:2em;
+
+}
+.buttonevent a :hover
+{
+   opacity:0.7;
+}
+h1{
+    text-align: center;
+}
+input{
+    width: 40%;
+    display:block;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 15px 18px;
+    box-sizing: border-box;
+    align-items:center;
+  }
+button {
+    background-color: white;
+    color:black;
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: 20%;
+    font-size: 14px;
+    align-items:center;
+  }
+  .formclass{
+    width:40rem;
+    margin: auto;
+    color:white;
+    background-color:#80BD9E;
+    border-radius: 12px;
+    margin-top:-20em;
+    margin-left:45em;
+    align-items:center;
+    box-shadow: 0 3px 10px black;
+    height:400px;
+}
+button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  .p2
+  {
+    color:white;
+    font-family:League Spartan;
+    font-size:19px;
+    margin-left:11em;
+    margin-top:-2em;
+  }
+  .inp
+  {
+      height:10%;
+      width:20%;
+      float:left;
+      color:#80BD9E;
+      background-color:white;
+      box-shadow:none;
+  }
+  .inp1
+  {
+    height:10%;
+      width:20%;
+      float:left;
+      color:#80BD9E;
+      background-color:white;
+      box-shadow:none;
+  }
+  .inp:hover,.inp1:hover
+  {
+       opacity:0.7;
+  }
+  input.inp {
+    margin-left: 14.5em;
+}
+
+</style>
+<script src="https://kit.fontawesome.com/48f97f7286.js" crossorigin="anonymous"></script>
+<script>
+     function validatelogin()
+  {
+  var n=document.f1.user.value;
+ if(n=="")
+ {
+ alert("Name cannot be empty!");
+ return false;
+ }
+var ps=document.f1.password.value;
+if(ps=="")
+{
+  alert("Password cannot be empty!"); 
+ return false;
+}
+if(ps.length<6)
+{
+  alert("Password cannot be less than 6 characters!");
+  return false;
+}
+else
+{
+return true;
+}
+  }
+</script>
+<script>
+  fetch('login.json')
+      .then(res=>res.json())
+      .then(data=>{
+          console.log(data);
+      })
+  </script>
+</head>
+<body>
+
+    <div class="imagediv">  
+<div class="navbar">
+    <img src="main.jpg"></img>
+    <p class="p2">"I have always imagined that Paradise will be a kind of a Library." ~Jorge Luis Borges (1899-1986 | Argentine writer)</p>
+  <a href="index.html">Home</a>
+  <a href="contactus.html">Contact Us</a>
+  <a href="services.html">Library Services</a>
+</div>
+</div>
+<form action="./abc" name="f1" class="formclass" method="post">
+  <br>  
+  <h1>Login Account</h1>
+    <center>
+    <div class="mainContainer">
+        <input type="text" placeholder="Student-ID" autocomplete="off" name="user">
+        <br><br>
+        <input type="password" placeholder="Password" autocomplete="off" name="password">
+        <br><br>
+        <input class="inp" type="submit" onclick="return validatelogin()" value="Login">
+        <input class="inp1" type="reset" value="Clear"><br>
+        <br><br>
+        <p class="register">New Member <a href="registration.html"style="text-decoration:none; color:white;">Sign-Up Here</a></p>
+        <br> 
+
+    </div>
+    </center>
+</form>
+<br>
+<br>
+<div class="detailsdiv">
+<p class="maxpara"> WHAT'S HAPPENING</p>
+<p class="mini" style="margin-left:2.5em">Article | May 2023</p>
+<br>
+<br>
+<img class="gather" src="libgather.jpg"></img><br><br>
+</div>
+<div class="eventdetails">
+<p class="mini">June 17,2023-July 23,2023</p>
+<p class="mini"><strong>Moonsoon Reading</strong></p>
+    <br><br>
+<p class="mini">July 30,2023-August 16,2023</p>
+    <p class="mini"><strong>Unsung Heroes ~ Poems</strong></p><br><br>
+<p class="mini">August 20,2023 - 11.30am- 3.00pm</p>
+    <p class="mini"><strong>Healthy Lifestyle-Counselling session by Sia</strong></p><br><br>
+<a href="events.html"><button class="buttonevent">All Events</button></a>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #80BD9E;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color:white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar a:hover {
+ opacity:0.7
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px;
+}
+img{
+    height:70px;
+    width:200px;
+    margin-left:auto;
+    display:-webkit-box;
+}
+.imagediv
+{
+    width:50%;
+    top: 70px;
+    height:510px;
+    padding:0em;
+    background-repeat:no-repeat;
+    background-image: url('WelcomeLibrary.jpg');
+    position:relative;
+    background-size: 90% 500px;
+    object-fit: cover;
+}
+.detailsdiv
+{
+    height:500px;
+    width:100%;
+    margin-left:0.2em;
+}
+.eventdetails
+{
+    margin-top: -25em;
+    margin-left:39em;
+}
+.maxpara
+{
+    font-size:20px;
+    font-family:League Spartan;
+    margin-left:2em;
+}
+.mini
+{
+    display:flex;
+    width:100%;
+    font-size:16px;
+    margin-left:2em;
+}
+.gather
+{
+    margin-left:6em;
+    width:500px;
+    height:400px;
+
+}
+.buttonevent
+{
+  background-color: #80BD9E;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  color:white;
+  margin-left:2em;
+
+}
+.buttonevent a :hover
+{
+   opacity:0.7;
+}
+h1{
+    text-align: center;
+}
+input{
+    width: 40%;
+    display:block;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 15px 18px;
+    box-sizing: border-box;
+    align-items:center;
+  }
+button {
+    background-color: white;
+    color:black;
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: 20%;
+    font-size: 14px;
+    align-items:center;
+  }
+  .formclass{
+    width:35rem;
+    margin: auto;
+    color:white;
+    background-color:#80BD9E;
+    border-radius: 12px;
+    margin-top:-20em;
+    margin-left:55em;
+    align-items:center;
+}
+button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+</style>
+<script src="https://kit.fontawesome.com/48f97f7286.js" crossorigin="anonymous"></script>
+<script>
+     function validatelogin()
+  {
+  var n=document.f1.namesfield.value;
+ if(n =="")
+ {
+ alert("Name cannot be empty!");
+ return false;
+ }
+var ps=document.f1.pass.value;
+if(ps =="")
+{
+  alert("Password cannot be empty!"); 
+ return false;
+}
+if(ps.length<6)
+{
+  alert("Password cannot be less than 6 characters!");
+  return false;
+}
+else
+{
+alert("You are now logged-in");
+window.location.href="index.html";
+}
+  }
+</script>
+</head>
+<body>
+
+    <div class="imagediv">  
+<div class="navbar">
+    <img src="main.jpg"></img>
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="contactus.html">Contact Us</a>
+  <a href="#">Support the Library</a>
+  <a href="#">Library Services</a>
+</div>
+</div>
+<form action="" class="formclass">
+    <h1>Login Account</h1>
+    <center>
+    <div class="mainContainer">
+        <input type="text" placeholder="Student-ID" autocomplete="off" name="user" required>
+        <br>
+        <input type="password" placeholder="Password" autocomplete="off" name="password" required>
+        <br>
+        <button type="submit" onsubmit="validatelogin()">Login</button>
+        <button type="reset">Clear</button>
+        <p class="register">New Member  <a href="regisdemo.html"style="text-decoration:none">Sign-Up!</a></p>
+        <br> 
+
+    </div>
+    </center>
+</form>
+<br>
+<br>
+<div class="detailsdiv">
+<p class="maxpara"> WHAT'S HAPPENING</p>
+<p class="mini" style="margin-left:2.5em">Article | May 2023</p>
+<br>
+<br>
+<img class="gather" src="libgather.jpg"></img><br><br>
+</div>
+<div class="eventdetails">
+<p class="mini">June 17,2023-July 23,2023</p>
+<p class="mini"><strong>Moonsoon Reading</strong></p>
+    <br><br>
+<p class="mini">July 30,2023-August 16,2023</p>
+    <p class="mini"><strong>Unsung Heroes ~ Poems</strong></p><br><br>
+<p class="mini">August 20,2023 - 11.30am- 3.00pm</p>
+    <p class="mini"><strong>Healthy Lifestyle-Counselling session by Sia</strong></p><br><br>
+<button class="buttonevent">All Events</button>
+
+</div>
+</body>
+</html>

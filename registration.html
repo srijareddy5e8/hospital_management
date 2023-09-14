@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <style>
+            *{
+
+                margin:0;
+            }
+            body{
+                font-family:League Spartan;
+            }
+        .photodiv {
+            background:#80BD9E;
+            padding:100px 100px;
+            margin-bottom: 0;;
+            }
+            .photodiv .imagediv {
+            width: auto;
+            background: url(backdrop.jpg);
+            background-size: cover;
+            display: table-cell;
+            }
+            .photodiv .formdiv {
+            max-width: 900px;
+            width: 90%;
+            margin: 0 auto;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            display: table;
+            }
+            .photodiv form {
+            width: 400px;
+            background-color: #ffffff;
+            padding: 40px 60px;
+            color:#80BD9E;
+            display: table-cell;
+            }
+            @media (max-width:991px) {
+            .photodiv form {
+            padding: 40px
+            }
+            }
+            .photodiv form h2 {
+            font-size: 24px;
+            margin-bottom: 30px
+            }
+            .photodiv form .f1 {
+            text-align:center;
+            height: 40px;
+            width:300px;
+
+            }
+           .inp
+            {
+                background-color: #80BD9E;
+                border: none;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                color:white;
+                margin-left:2em;
+        
+            }
+            .inp:hover
+            {
+                opacity:0.7;
+            }
+            </style>
+            <script>
+                function validateregistration()
+                {
+                var n=document.f1.uname.value;
+                if(n=="")
+                {
+                    alert("Name cannot be Null");
+                    return false;
+                }
+                
+                var id=document.f1.stid.value;
+                if(id=="")
+                {
+                    alert("ID cannot be Null");
+                    return false;
+                }
+             var e=document.f1.email.value;
+                if(e=="")
+                {
+                    alert("Email cannot be Null");
+                    return false;
+                }
+                var p1=document.f1.pass.value;
+                 if(p1=="")
+                {
+                    alert("Password cannot be Null OR Password must be more than 6 characters");
+                    return false;
+                }
+        var p2=document.f1.repass.value;
+                    if(p2!=p1)
+                {
+                    alert("Password entered is not same");
+                    return false;
+                }
+                else{
+                   return true;
+                }
+                </script>
+    
+    </head>
+    <body>
+        <div class="photodiv">
+            <div class="formdiv">
+            <div class="imagediv"></div>
+            <form action="./abcd" name="f1" method="post">
+            <h2>Create your library account.</h2>
+            <p><input class="f1" type="text" name="uname" autocomplete="off" placeholder="Name"></p>
+            <br>
+            <p><input class="f1" type="text" name="stid" autocomplete="off" placeholder="Student ID"></p>
+            <br>
+            <p><input class="f1" type="text" name="email" autocomplete="off" placeholder="Student Email"></p>
+            <br>
+            <p><input class="f1" type="password" name="pass" autocomplete="off" placeholder="Password"></p>
+            <br>
+            <p><input class="f1" type="password" name="repass" autocomplete="off" placeholder="Re-Enter Password"></p>
+                <br>
+            <br>
+        
+            <div><input class="inp" type="submit" onclick="return validateregistration()" value="Submit">
+                <input class="inp" type="reset" value="Clear"><br><br>
+            <a style="display: block; text-align: center;font-size: 14px;color:#80BD9E;
+            text-decoration: none;" href="index.html">You already have an account? Login here.</a>  
+        </form>
+            </div>
+            </div> 
+    </body>
+</html>
